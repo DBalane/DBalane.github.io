@@ -1,0 +1,161 @@
+html
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Short Stories</title>
+    
+    <!-- INSERT YOUR VISITOR TRACKING SCRIPT HERE -->
+    <!-- (e.g., Google Analytics or Plausible script snippet) -->
+
+    <style>
+        /* Modern, clean dark-mode design to make animations pop */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            padding: 40px 20px;
+            background-color: #1a1a1a;
+            border-bottom: 1px solid #2d2d2d;
+        }
+        h1 {
+            margin: 0;
+            color: #ffffff;
+            font-size: 2.5rem;
+        }
+        p.subtitle {
+            color: #888888;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        /* Video Container to ensure animations look great on phones and desktops */
+        .video-card {
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border: 1px solid #2d2d2d;
+            text-align: left; /* Aligns text cleanly beneath the video */
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #000;
+        }
+        /* Style for both iframe (YouTube) and video (Raw MP4) tags */
+        .video-wrapper iframe, .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .video-title {
+            margin: 20px 0 10px 0;
+            color: #ffffff;
+            font-size: 1.5rem;
+        }
+        .video-description {
+            color: #aaaaaa;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+        /* Secure Donation Section */
+        .donation-section {
+            background: linear-gradient(145deg, #1e1e1e, #252525);
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-top: 60px;
+            border: 1px solid #333;
+        }
+        .donate-btn {
+            display: inline-block;
+            background-color: #ffdd00;
+            color: #121212;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 15px rgba(255, 221, 0, 0.3);
+        }
+        .donate-btn:hover {
+            transform: scale(1.05);
+            background-color: #ffea4a;
+        }
+        footer {
+            margin: 80px 0 40px 0;
+            color: #666666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Animated Stories</h1>
+        <p class="subtitle">Watch my latest short animation projects below.</p>
+    </header>
+
+    <div class="container">
+
+        <!-- OPTION A: RAW MP4 PLAYER (Hosted on GitHub) -->
+        <div class="video-card">
+            <div class="video-wrapper">
+                <!-- Looks for 'story1.mp4' in your GitHub folder. Removes download button for protection. -->
+                <video controls controlsList="nodownload" poster="story1-thumbnail.jpg">
+                    <source src="story1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <h2 class="video-title">Story One: Raw MP4 Example</h2>
+            <p class="video-description">This card uses a native video player. It streams an MP4 file named "story1.mp4" directly from your GitHub hosting folder. Perfect for small, optimized animation files.</p>
+        </div>
+
+
+        <!-- OPTION B: EMBEDDED PLAYER (YouTube / Vimeo / Cloud) -->
+        <div class="video-card">
+            <div class="video-wrapper">
+                <!-- Replace the URL below with your YouTube embed link if your file is over 100MB -->
+                <iframe src="https://youtube.com" allowfullscreen></iframe>
+            </div>
+            <h2 class="video-title">Story Two: Embedded Video Example</h2>
+            <p class="video-description">This card uses an iframe to stream from YouTube. Use this option if your animation file size is over 100MB, or if you want to save your GitHub storage space.</p>
+        </div>
+
+
+        <!-- SUPPORT / DONATION BOX -->
+        <div class="donation-section">
+            <h2 style="color: #fff; margin-top: 0; text-align: center;">Enjoyed the stories?</h2>
+            <p style="color: #bbbbbb; margin-bottom: 25px; text-align: center;">If you would like to support my work and help me create more animations, consider leaving a small tip!</p>
+            <!-- Replace the '#' link below with your personal PayPal.me, Ko-fi, or Stripe link -->
+            <div style="text-align: center;">
+                <a href="#" class="donate-btn" target="_blank">☕ Support My Work</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Animated Stories. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+
