@@ -47,6 +47,7 @@ html
             margin-bottom: 40px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             border: 1px solid #2d2d2d;
+            text-align: left; /* Aligns text cleanly beneath the video */
         }
         .video-wrapper {
             position: relative;
@@ -56,6 +57,7 @@ html
             border-radius: 8px;
             background-color: #000;
         }
+        /* Style for both iframe (YouTube) and video (Raw MP4) tags */
         .video-wrapper iframe, .video-wrapper video {
             position: absolute;
             top: 0;
@@ -72,6 +74,7 @@ html
         .video-description {
             color: #aaaaaa;
             line-height: 1.6;
+            margin-bottom: 0;
         }
         /* Secure Donation Section */
         .donation-section {
@@ -113,22 +116,39 @@ html
 
     <div class="container">
 
-        <!-- ANIMATION STORY 1 -->
+        <!-- OPTION A: RAW MP4 PLAYER (Hosted on GitHub) -->
         <div class="video-card">
             <div class="video-wrapper">
-                <!-- Replace the URL below with your YouTube embed link, Vimeo link, or video file path -->
+                <!-- Looks for 'story1.mp4' in your GitHub folder. Removes download button for protection. -->
+                <video controls controlsList="nodownload" poster="story1-thumbnail.jpg">
+                    <source src="story1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <h2 class="video-title">Story One: Raw MP4 Example</h2>
+            <p class="video-description">This card uses a native video player. It streams an MP4 file named "story1.mp4" directly from your GitHub hosting folder. Perfect for small, optimized animation files.</p>
+        </div>
+
+
+        <!-- OPTION B: EMBEDDED PLAYER (YouTube / Vimeo / Cloud) -->
+        <div class="video-card">
+            <div class="video-wrapper">
+                <!-- Replace the URL below with your YouTube embed link if your file is over 100MB -->
                 <iframe src="https://youtube.com" allowfullscreen></iframe>
             </div>
-            <h2 class="video-title">Story Title One</h2>
-            <p class="video-description">Write a brief, engaging summary of your short story or animation project here to give your viewers some context before they watch.</p>
+            <h2 class="video-title">Story Two: Embedded Video Example</h2>
+            <p class="video-description">This card uses an iframe to stream from YouTube. Use this option if your animation file size is over 100MB, or if you want to save your GitHub storage space.</p>
         </div>
+
 
         <!-- SUPPORT / DONATION BOX -->
         <div class="donation-section">
-            <h2 style="color: #fff; margin-top: 0;">Enjoyed the stories?</h2>
-            <p style="color: #bbbbbb; margin-bottom: 25px;">If you would like to support my work and help me create more animations, consider leaving a small tip!</p>
+            <h2 style="color: #fff; margin-top: 0; text-align: center;">Enjoyed the stories?</h2>
+            <p style="color: #bbbbbb; margin-bottom: 25px; text-align: center;">If you would like to support my work and help me create more animations, consider leaving a small tip!</p>
             <!-- Replace the '#' link below with your personal PayPal.me, Ko-fi, or Stripe link -->
-            <a href="#" class="donate-btn" target="_blank">☕ Support My Work</a>
+            <div style="text-align: center;">
+                <a href="#" class="donate-btn" target="_blank">☕ Support My Work</a>
+            </div>
         </div>
 
         <footer>
@@ -138,3 +158,4 @@ html
 
 </body>
 </html>
+
